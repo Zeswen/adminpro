@@ -1,1 +1,50 @@
-<p>graficas1 works!</p>
+<div class="row">
+    <div class="col-6" *ngFor="let chart of charts">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{chart.title}}</h3>
+                <app-doughnut-chart [doughnutChartData]="chart.data" [doughnutChartLabels]="chart.labels"></app-doughnut-chart>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{charts.chart1.title}}</h3>
+                <app-doughnut-chart [doughnutChartData]="charts.chart1.data" [doughnutChartLabels]="charts.chart1.labels"></app-doughnut-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{charts.chart2.title}}</h3>
+                <app-doughnut-chart [doughnutChartData]="charts.chart2.data" [doughnutChartLabels]="charts.chart2.labels"></app-doughnut-chart>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{charts.chart3.title}}</h3>
+                <app-doughnut-chart [doughnutChartData]="charts.chart3.data" [doughnutChartLabels]="charts.chart3.labels"></app-doughnut-chart>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>{{charts.chart4.title}}</h3>
+                <app-doughnut-chart [doughnutChartData]="charts.chart4.data" [doughnutChartLabels]="charts.chart4.labels"></app-doughnut-chart>
+
+            </div>
+        </div>
+    </div>
+</div> -->
