@@ -19,9 +19,7 @@ export class DoughnutChartComponent implements OnInit {
     [250, 130, 70]
   ];
   @Input() public doughnutChartType: ChartType = 'doughnut';
-  constructor() {
-    console.log(this.doughnutChartData)
-  }
+  constructor() {}
 
   ngOnInit() {}
 }

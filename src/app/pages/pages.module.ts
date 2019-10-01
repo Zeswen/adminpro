@@ -8,10 +8,11 @@ import { SharedModule } from '../shared/shared.module';
 
 import { PagesComponent } from './pages.component';
 
+import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
-import { PAGES_ROUTES } from './pages.routes';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 import { IncrementerComponent } from '../components/incrementer/incrementer.component';
 import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-chart.component';
@@ -23,12 +24,13 @@ import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-ch
     ProgressComponent,
     Graficas1Component,
     IncrementerComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    AccountSettingsComponent
   ],
   imports: [
+    PAGES_ROUTES,
     CommonModule,
     SharedModule,
-    PAGES_ROUTES,
     FormsModule,
     ChartsModule
   ],
