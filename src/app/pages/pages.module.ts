@@ -16,6 +16,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 
 import { IncrementerComponent } from '../components/incrementer/incrementer.component';
 import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-chart.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-ch
     Graficas1Component,
     IncrementerComponent,
     DoughnutChartComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    PromisesComponent,
+    RxjsComponent
   ],
   imports: [
     PAGES_ROUTES,
