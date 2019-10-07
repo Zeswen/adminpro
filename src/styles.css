@@ -1,11 +1,11 @@
 #themecolors a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-/*
-
-*/
+.w150 {
+  width: 150px;
+}

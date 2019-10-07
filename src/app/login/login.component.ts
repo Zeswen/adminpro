@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
       this._userService
         .googleLogin(token)
         .subscribe(() => (window.location.href = '#/dashboard'));
-      console.log(token);
     });
   }
 

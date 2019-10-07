@@ -6,6 +6,7 @@ import { BASE_URL } from '../../config/constants';
 
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { UploadFileService } from '../upload-file/upload-file.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,11 @@ export class UserService {
   user: User;
   token: string;
 
-  constructor(public http: HttpClient, public router: Router) {
+  constructor(
+    public http: HttpClient,
+    public router: Router,
+    public _uploadFileService: UploadFileService
+  ) {
     this.loadFromStorage();
   }
 
@@ -89,5 +94,33 @@ export class UserService {
         return res.data.ops[0];
       })
     );
+  }
+
+  updateUser(user: User) {
+    const url = `${BASE_URL}/user/${user._id}?token=${this.token}`;
+    return this.http.put(url, user).pipe(
+      map((res: any) => {
+        const mongoUser: User = res.data.value;
+        this.saveToStorage(mongoUser._id, this.token, mongoUser);
+        swal('User updated', user.name, 'success');
+        return true;
+      })
+    );
+  }
+
+  updateImage(file: File, id: string) {
+    this._uploadFileService
+      .uploadFile(file, 'users', id)
+      .then((res: any) => {
+        console.log(res)
+        const mongoUser: any = res.data.value;
+        this.user.img = mongoUser.img;
+        swal('Image updated', this.user.name, 'success');
+        this.saveToStorage(mongoUser._id, this.token, this.user);
+        return true;
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 }

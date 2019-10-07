@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// Rutas
+// Routes
 import { APP_ROUTES } from './app.routes';
 
-// Módulos
+// Modules
 
 import { PagesModule } from './pages/pages.module';
 

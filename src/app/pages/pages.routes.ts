@@ -4,8 +4,9 @@ import { PagesComponent } from './pages.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
+import { Charts1Component } from './charts1/charts1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ProfileComponent } from './profile/profile.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuard } from '../services/service.index';
@@ -27,14 +28,19 @@ const pagesRoutes: Routes = [
         data: { title: 'Progress' }
       },
       {
-        path: 'graficas1',
-        component: Graficas1Component,
+        path: 'charts1',
+        component: Charts1Component,
         data: { title: 'Charts' }
       },
       {
         path: 'account-settings',
         component: AccountSettingsComponent,
         data: { title: 'Settings' }
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        data: { title: 'Profile' }
       },
       {
         path: 'promises',

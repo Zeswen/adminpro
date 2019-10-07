@@ -11,33 +11,38 @@ import { PagesComponent } from './pages.component';
 import { PAGES_ROUTES } from './pages.routes';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
+import { Charts1Component } from './charts1/charts1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+
+import { PipesModule } from '../pipes/pipes.module';
 
 import { IncrementerComponent } from '../components/incrementer/incrementer.component';
 import { DoughnutChartComponent } from '../components/doughnut-chart/doughnut-chart.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    Graficas1Component,
+    Charts1Component,
     IncrementerComponent,
     DoughnutChartComponent,
     AccountSettingsComponent,
     PromisesComponent,
-    RxjsComponent
+    RxjsComponent,
+    ProfileComponent
   ],
   imports: [
     PAGES_ROUTES,
     CommonModule,
     SharedModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    PipesModule
   ],
-  exports: [DashboardComponent, ProgressComponent, Graficas1Component]
+  exports: [DashboardComponent, ProgressComponent, Charts1Component]
 })
 export class PagesModule {}

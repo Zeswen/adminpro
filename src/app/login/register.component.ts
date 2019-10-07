@@ -60,7 +60,6 @@ export class RegisterComponent implements OnInit {
     }
     if (!this.form.value.terms) {
       swal('Important', 'You must check the terms and conditions!', 'warning');
-      console.log('Please accept the terms and conditions.');
     }
 
     const user = new User(
@@ -70,7 +69,6 @@ export class RegisterComponent implements OnInit {
     );
 
     this._userService.createUser(user).subscribe(res => {
-      console.log(res);
       this.router.navigate(['/login']);
     });
   }
