@@ -7,6 +7,8 @@ import {
   SharedService,
   SidebarService,
   UserService,
+  HospitalService,
+  DoctorService,
   UploadFileService,
   ModalUploadService,
   LoginGuard
@@ -19,8 +21,10 @@ import {
     SharedService,
     SidebarService,
     UserService,
+    HospitalService,
     UploadFileService,
     ModalUploadService,
+    DoctorService,
     LoginGuard
   ],
   imports: [CommonModule, HttpClientModule]

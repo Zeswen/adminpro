@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.loadUsers();
-    this._modalUploadService.notification.subscribe(res => {
+    this._modalUploadService.notification.subscribe(() => {
       this.loadUsers();
     });
   }
@@ -45,7 +45,7 @@ export class UsersComponent implements OnInit {
     this.loadUsers();
   }
 
-  searchUser(term: string) {
+  searchUsers(term: string) {
     if (term.length <= 0) {
       this.loadUsers();
       return;

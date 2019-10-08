@@ -8,7 +8,7 @@ export class ImagePipe implements PipeTransform {
   transform(img: string, type: string = 'users'): any {
     const url = BASE_URL + '/img';
     if (!img) {
-      return `${url}/users/notfound`;
+      return `${url}/${type}/notfound`;
     }
     if (img.includes('https')) {
       return img;

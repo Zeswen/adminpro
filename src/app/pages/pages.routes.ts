@@ -11,6 +11,9 @@ import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuard } from '../services/service.index';
 import { UsersComponent } from './users/users.component';
+import { HospitalsComponent } from './hospitals/hospitals.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { DoctorComponent } from './doctors/doctor.component';
 
 const pagesRoutes: Routes = [
   {
@@ -57,18 +60,23 @@ const pagesRoutes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
-        data: { title: 'Users' }
+        data: { title: 'Admin Users' }
       },
-      // {
-      //   path: 'Hospitals',
-      //   component: HospitalsComponent,
-      //   data: { title: 'Hospitals' }
-      // },
-      // {
-      //   path: 'Doctors',
-      //   component: DoctorsComponent,
-      //   data: { title: 'Doctors' }
-      // },
+      {
+        path: 'hospitals',
+        component: HospitalsComponent,
+        data: { title: 'Admin Hospitals' }
+      },
+      {
+        path: 'doctors',
+        component: DoctorsComponent,
+        data: { title: 'Admin Doctors' }
+      },
+      {
+        path: 'doctor/:_id',
+        component: DoctorComponent,
+        data: { title: 'Update Doctor' }
+      },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
   }
