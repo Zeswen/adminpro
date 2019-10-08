@@ -47,9 +47,9 @@ export class RegisterComponent implements OnInit {
     );
     this.form.setValue({
       name: 'test',
-      email: 'test@test.com',
+      email: 'test1@test.com',
       password: '123',
-      passwordConfirmation: '1234',
+      passwordConfirmation: '123',
       terms: true
     });
   }

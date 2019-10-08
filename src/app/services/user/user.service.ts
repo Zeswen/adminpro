@@ -100,8 +100,10 @@ export class UserService {
     const url = `${BASE_URL}/user/${user._id}?token=${this.token}`;
     return this.http.put(url, user).pipe(
       map((res: any) => {
-        const mongoUser: User = res.data.value;
-        this.saveToStorage(mongoUser._id, this.token, mongoUser);
+        if (user._id === this.user._id) {
+          const mongoUser: User = res.data.value;
+          this.saveToStorage(mongoUser._id, this.token, mongoUser);
+        }
         swal('User updated', user.name, 'success');
         return true;
       })
@@ -112,7 +114,7 @@ export class UserService {
     this._uploadFileService
       .uploadFile(file, 'users', id)
       .then((res: any) => {
-        console.log(res)
+        console.log(res);
         const mongoUser: any = res.data.value;
         this.user.img = mongoUser.img;
         swal('Image updated', this.user.name, 'success');
@@ -122,5 +124,25 @@ export class UserService {
       .catch(err => {
         console.error(err);
       });
+  }
+
+  loadUsers(from: number) {
+    const url = `${BASE_URL}/users?from=${from}`;
+    return this.http.get(url);
+  }
+
+  searchUsers(term: string) {
+    const url = `${BASE_URL}/search/users/${term}`;
+    return this.http.get(url);
+  }
+
+  deleteUser(_id: string) {
+    const url = `${BASE_URL}/user/${_id}?token=${this.token}`;
+    return this.http.delete(url).pipe(
+      map(() => {
+        swal('User deleted', 'The user was successfully deleted.', 'success');
+        return true;
+      })
+    );
   }
 }

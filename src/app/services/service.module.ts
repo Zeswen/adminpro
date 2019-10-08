@@ -8,6 +8,7 @@ import {
   SidebarService,
   UserService,
   UploadFileService,
+  ModalUploadService,
   LoginGuard
 } from './service.index';
 
@@ -19,6 +20,7 @@ import {
     SidebarService,
     UserService,
     UploadFileService,
+    ModalUploadService,
     LoginGuard
   ],
   imports: [CommonModule, HttpClientModule]

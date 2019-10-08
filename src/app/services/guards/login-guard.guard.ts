@@ -8,7 +8,6 @@ import { UserService } from '../user/user.service';
 export class LoginGuard implements CanActivate {
   constructor(public _userService: UserService, public router: Router) {}
   canActivate() {
-    console.log('Passing through the login guard');
     if (this._userService.isLoggedIn()) {
       return true;
     } else {

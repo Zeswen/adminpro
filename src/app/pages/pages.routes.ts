@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuard } from '../services/service.index';
+import { UsersComponent } from './users/users.component';
 
 const pagesRoutes: Routes = [
   {
@@ -52,6 +53,22 @@ const pagesRoutes: Routes = [
         component: RxjsComponent,
         data: { title: 'RxJs' }
       },
+      // Admin
+      {
+        path: 'users',
+        component: UsersComponent,
+        data: { title: 'Users' }
+      },
+      // {
+      //   path: 'Hospitals',
+      //   component: HospitalsComponent,
+      //   data: { title: 'Hospitals' }
+      // },
+      // {
+      //   path: 'Doctors',
+      //   component: DoctorsComponent,
+      //   data: { title: 'Doctors' }
+      // },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
   }
