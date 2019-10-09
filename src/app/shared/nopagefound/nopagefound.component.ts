@@ -5,14 +5,14 @@ declare function init_plugins();
 @Component({
   selector: 'app-nopagefound',
   templateUrl: './nopagefound.component.html',
-  styles: []
+  styleUrls: ['./nopagefound.component.css']
 })
 export class NopagefoundComponent implements OnInit {
+  year: number = new Date().getFullYear();
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     init_plugins();
   }
-
 }

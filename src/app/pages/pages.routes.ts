@@ -9,11 +9,12 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { ProfileComponent } from './profile/profile.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { LoginGuard } from '../services/service.index';
+import { LoginGuard, AdminGuard } from '../services/service.index';
 import { UsersComponent } from './users/users.component';
 import { HospitalsComponent } from './hospitals/hospitals.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorComponent } from './doctors/doctor.component';
+import { SearchComponent } from './search/search.component';
 
 const pagesRoutes: Routes = [
   {
@@ -56,9 +57,15 @@ const pagesRoutes: Routes = [
         component: RxjsComponent,
         data: { title: 'RxJs' }
       },
+      {
+        path: 'search/:term',
+        component: SearchComponent,
+        data: { title: 'Search' }
+      },
       // Admin
       {
         path: 'users',
+        canActivate: [AdminGuard],
         component: UsersComponent,
         data: { title: 'Admin Users' }
       },
