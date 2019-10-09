@@ -25,6 +25,26 @@ export class UserService {
     this.loadFromStorage();
   }
 
+  renewToken() {
+    const url = `${BASE_URL}/login/renewToken?token=${this.token}`;
+    return this.http.get(url).pipe(
+      map((res: any) => {
+        this.token = res.data;
+        localStorage.setItem('token', this.token);
+        return true;
+      }),
+      catchError(err => {
+        this.router.navigate(['/login']);
+        swal(
+          'Error renewing token',
+          'Could not renew your auth token',
+          'error'
+        );
+        return throwError(err);
+      })
+    );
+  }
+
   isLoggedIn() {
     return this.token.length > 5;
   }

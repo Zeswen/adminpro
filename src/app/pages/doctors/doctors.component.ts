@@ -4,8 +4,6 @@ import { ModalUploadService } from '../../components/modal-upload/modal-upload.s
 import { Doctor } from '../../models/doctor.model';
 import swal from 'sweetalert';
 
-declare var swal: any;
-
 @Component({
   selector: 'app-doctors',
   templateUrl: './doctors.component.html',

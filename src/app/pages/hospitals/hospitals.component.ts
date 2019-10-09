@@ -4,8 +4,6 @@ import { ModalUploadService } from '../../components/modal-upload/modal-upload.s
 import { Hospital } from '../../models/hospital.model';
 import swal from 'sweetalert';
 
-declare var swal: any;
-
 @Component({
   selector: 'app-hospitals',
   templateUrl: './hospitals.component.html',
@@ -60,7 +58,9 @@ export class HospitalsComponent implements OnInit {
           placeholder: 'Name'
         }
       },
-      button: 'Create'
+      buttons: {
+        confirm: { text: 'Create' }
+      }
     }).then(name => {
       if (!name) return;
       this._hospitalService
